@@ -25,7 +25,6 @@ func (json *Json) IsContain(jsonPath string, value string) bool {
 }
 
 func (json *Json) IsValidBySchema(jsonSchemaPath string) bool {
-
 	schemaLoader := gojsonschema.NewReferenceLoader(jsonSchemaPath)            //json schema its absolutely path to jsonSchema (like: "file:///C:/Users/sd/IdeaProjects/untitled1/jsonWrongSchemaTest.json")
 	documentLoader := gojsonschema.NewStringLoader(json.String)
 	result, err := gojsonschema.Validate(schemaLoader, documentLoader)
